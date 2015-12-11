@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="words_small">
+	<item>A</item>
+	<item>AB</item>
+	<item>UVA</item>
+	<item>BEAR</item>
+	<item>BOAR</item>
+	<item>DEER</item>
+	<item>DUCK</item>
+	<item>HARE</item>
+	<item>MINOR</item>
+	<item>WETEN</item>
+	<item>WELKE</item>
+	<item>AAPJE</item>
+	<item>ABCDEF</item>
+	<item>HANGMAN</item>
+	<item>SCIENCEPARK</item>
+	<item>SCIENCEPAR</item>
+	<item>AANGEKLEEFD</item>
+	<item>AANGEPSROKEN</item>
+	<item>AANGESPROORDE</item>
+	<item>AANDEELHOUDERSOVEREENKOMST</item>
+	<item>BRANDBESTRIJDINGSMATERIAAL</item>
+</string-array>
+</resources>
