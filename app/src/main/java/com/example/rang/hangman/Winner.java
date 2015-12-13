@@ -25,24 +25,30 @@ public class Winner extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
+            //get the value based on the key
             value = extras.getString("currWord");
-        //get the value based on the key
         }
 
         Bundle extras2 = getIntent().getExtras();
         if (extras != null) {
-            value2 = extras2.getInt("turnsLeft");
             //get the value based on the key
+            value2 = extras2.getInt("turnsLeft");
         }
 
         word.setText(String.valueOf(value));
         turnsLeft.setText(String.valueOf(value2));
-
     }
 
     public void highscoreWinnerClicked(View view) {
         Intent homeScreen = new Intent(this, Highscore.class);
-        homeScreen.putExtra("name", String.valueOf(name));
+        String turnsLeftHighscore = String.valueOf(value2);
+        // new string to define name
+        String nameInput = name.getText().toString().trim();
+        // send name, turnsLeft and word to highscore
+        homeScreen.putExtra("name", String.valueOf(nameInput));
+        homeScreen.putExtra("turnsLeft", turnsLeftHighscore);
+        homeScreen.putExtra("word", String.valueOf(value));
+
         startActivity(homeScreen);
     }
 }

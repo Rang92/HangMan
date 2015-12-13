@@ -19,6 +19,7 @@ public class WordLoad {
         parser = mycontext.getResources().getXml(R.xml.words);
     }
 
+    // parse xml file and return the list
 HashSet <String> readFeed() throws XmlPullParserException, IOException {
     while (parser.getEventType() != XmlPullParser.END_DOCUMENT) {
         if (parser.getEventType() == XmlPullParser.START_TAG) {
@@ -35,7 +36,7 @@ HashSet <String> readFeed() throws XmlPullParserException, IOException {
     }
     return list;
 }
-
+    // new hashset with words of given length returns new set
     public HashSet copyHashSet(int wordLength){
         for(String items: list){
             Log.i("WordLoad", "In for loop copy hashset" + items);

@@ -14,9 +14,11 @@ public class GoodGamePlay{
     String randomWord;
     String currWord;
     Random random;
+    int turns;
     public static HashSet wordHash;
 
     public GoodGamePlay(WordLoad word, int wordLength, int turnsAllowed){
+        turns = turnsAllowed;
         setMaxTurns(turnsAllowed);
         words = word;
         try {
@@ -26,14 +28,18 @@ public class GoodGamePlay{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // get list with words from copyHashSet
         wordHash = words.copyHashSet(wordLength);
+        // convert hashset to string array
         wordList = (String[]) wordHash.toArray(new String[wordHash.size()]);
         currWord = getRandomWord(wordList);
         invisibleWord();
     }
 
+
     public String getRandomWord(String[] wordList) {
         random = new Random();
+        // get random word from the wordList and return
         randomWord = wordList[random.nextInt(wordList.length)];
         return randomWord;
     }
@@ -42,6 +48,7 @@ public class GoodGamePlay{
         showLetter = new StringBuilder();
         wrongLetters = new StringBuilder();
         for (int i = 0; i < currWord.length(); i++){
+            // show * based on the length of the current word(currWord)
             showLetter.append("*");
         }
     }
@@ -61,6 +68,7 @@ public class GoodGamePlay{
     public boolean guess(Character C){
         if (checkChar(C)) {
             for (int i = 0; i < currWord.length(); i++) {
+                // if letter in word, show letter at i place
                 if (checkChar(i, C)) {
                     showLetter.setCharAt(i, C);
                 }
@@ -79,7 +87,7 @@ public class GoodGamePlay{
 
     public void restart() {
         currWord = getRandomWord(wordList);
-        setMaxTurns(turnsLeft);
+        setMaxTurns(turns);
     }
 
     public boolean checkWord() {
@@ -93,7 +101,9 @@ public class GoodGamePlay{
                 return false;
             }
         }
+        // add wrongLetter on screen
         wrongLetters.append(C + " ");
+        // minus one turn
         turnsLeft--;
         return true;
     }

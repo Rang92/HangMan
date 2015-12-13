@@ -26,36 +26,13 @@
         android:layout_alignEnd="@+id/highscoresTitle"
         android:onClick="playClicked" />
 
-    <TextView
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/nameHighscore"
-        android:layout_marginTop="50dp"
+        android:id="@+id/listView"
         android:layout_below="@+id/highscoresTitle"
-        android:layout_alignParentStart="true"
-        android:textColor="#000000"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/wordHighscore"
-        android:layout_alignTop="@+id/nameHighscore"
-        android:layout_centerHorizontal="true"
-        android:textColor="#000000"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/turnleftHighscore"
-        android:layout_alignTop="@+id/wordHighscore"
         android:layout_alignParentEnd="true"
-        android:textColor="#000000"/>
+        android:layout_above="@+id/playHighscore" />
 
 
 </RelativeLayout>
